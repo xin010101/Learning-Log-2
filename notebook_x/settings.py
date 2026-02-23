@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-((^qb=a$o@x_zx1a%98ckl3a8x($fr5^(g25jb)jx!b5i8+du5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -131,4 +131,5 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'learning_logs:index'
 LOGOUT_REDIRECT_URL = 'learning_logs:index'
 LOGIN_URL = 'accounts:login'
+
 
