@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 指定Django如何与系统交互以及如何管理项目
 '''
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-((^qb=a$o@x_zx1a%98ckl3a8x($fr5^(g25jb)jx!b5i8+du5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 
 # Application definition
@@ -130,3 +131,4 @@ STATIC_URL = 'static/'
 LOGIN_REDIRECT_URL = 'learning_logs:index'
 LOGOUT_REDIRECT_URL = 'learning_logs:index'
 LOGIN_URL = 'accounts:login'
+
